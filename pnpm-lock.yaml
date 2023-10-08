@@ -17,6 +17,9 @@ dependencies:
   '@radix-ui/react-dropdown-menu':
     specifier: ^2.0.6
     version: 2.0.6(@types/react-dom@18.2.11)(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)
+  '@radix-ui/react-popover':
+    specifier: ^1.0.7
+    version: 1.0.7(@types/react-dom@18.2.11)(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-tooltip':
     specifier: ^1.0.7
     version: 1.0.7(@types/react-dom@18.2.11)(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)

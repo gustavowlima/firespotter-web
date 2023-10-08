@@ -27,7 +27,13 @@ export const NavBarTooltip = ({ children, content }: ITooltipProps) => {
   );
 };
 
-export const NavBar = ({ fixed }: { fixed?: boolean }) => {
+export const NavBar = ({
+  fixed,
+  handleModal,
+}: {
+  fixed?: boolean;
+  handleModal?: (state: boolean) => void;
+}) => {
   const navigate = useNavigate();
 
   return (
@@ -55,7 +61,14 @@ export const NavBar = ({ fixed }: { fixed?: boolean }) => {
           </div>
         </NavBarTooltip>
         <NavBarTooltip content="Form">
-          <div className="flex items-center p-3 hover:bg-gray-900 rounded-full">
+          <div
+            className="flex items-center p-3 hover:bg-gray-900 rounded-full"
+            onClick={() => {
+              if (handleModal) {
+                handleModal(true);
+              }
+            }}
+          >
             <FileMinus2 size={28} className="text-white" />
           </div>
         </NavBarTooltip>

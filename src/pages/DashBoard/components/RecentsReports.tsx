@@ -22,8 +22,8 @@ export const RecentsReports = () => {
           </Table.Header>
           <Table.Body>
             <Table.Row>
-              <Table.Cell>João Pessoa, Paraíba - Brasil</Table.Cell>
-              <Table.Cell>Severity</Table.Cell>
+              <Table.Cell>Londres - Europa</Table.Cell>
+              <Table.Cell>Light</Table.Cell>
               <Table.Cell></Table.Cell>
             </Table.Row>
           </Table.Body>
