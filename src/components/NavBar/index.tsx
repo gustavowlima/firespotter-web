@@ -1,6 +1,7 @@
 import Logo from "../../assets/logo.svg?react";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { LayoutDashboard } from "lucide-react";
+import { FileMinus2, LayoutDashboard, Map } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 type ITooltipProps = {
   children: React.ReactNode;
@@ -26,14 +27,36 @@ export const NavBarTooltip = ({ children, content }: ITooltipProps) => {
   );
 };
 
-export const NavBar = () => {
+export const NavBar = ({ fixed }: { fixed?: boolean }) => {
+  const navigate = useNavigate();
+
   return (
-    <nav className="flex items-center flex-wrap mx-6 h-screen py-6">
+    <nav
+      className={`${
+        fixed && "fixed left-6 z-[9999]"
+      } flex items-center flex-wrap mx-6 h-screen py-6`}
+    >
       <div className="flex flex-col items-center bg-gray-800 h-full rounded-3xl p-4 gap-6">
         <Logo />
         <NavBarTooltip content="Dashboard">
-          <div className="flex items-center p-3 hover:bg-gray-900 rounded-full">
+          <div
+            className="flex items-center p-3 hover:bg-gray-900 rounded-full"
+            onClick={() => navigate("/")}
+          >
             <LayoutDashboard size={28} className="text-white" />
+          </div>
+        </NavBarTooltip>
+        <NavBarTooltip content="Map">
+          <div
+            className="flex items-center p-3 hover:bg-gray-900 rounded-full"
+            onClick={() => navigate("/view-map")}
+          >
+            <Map size={28} className="text-white" />
+          </div>
+        </NavBarTooltip>
+        <NavBarTooltip content="Form">
+          <div className="flex items-center p-3 hover:bg-gray-900 rounded-full">
+            <FileMinus2 size={28} className="text-white" />
           </div>
         </NavBarTooltip>
       </div>

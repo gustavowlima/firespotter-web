@@ -6,7 +6,6 @@ export const Map = ({
 }: {
   cordinates: LatLngExpression | undefined;
 }) => {
-  console.log("🚀 ~ file: index.tsx:9 ~ cordinates:", cordinates);
   return (
     <MapContainer
       center={[38.736946, -9.142685]}
